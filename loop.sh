@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+PYTHONUTF8=1
+PYTHONIOENCODING=utf-8
 # Run trading cycles headlessly.
 # Usage: ./loop.sh [cycles] [sleep_minutes] [--real]
 #   --real: append REAL.md to the prompt so qualifying paper bets get a $1
@@ -179,7 +181,7 @@ PY
           --mcp-config "$STORE/.mcp.json"
           --disallowedTools "Read($STORE/.mcp.json)")
   fi
-  CMD+=(--permission-mode acceptEdits)
+  CMD+=(--permission-mode bypassPermissions)
 
   # PHIL_PUSH_BY_LOOP tells CYCLE.md step 9 to commit but not push — the push
   # happens below, in this shell. GIT_TERMINAL_PROMPT/GIT_ASKPASS make any
