@@ -3729,3 +3729,29 @@ market on Brier. I did not recompute fold pnl.
 0 placed, 2 open. No reverts. Pacing tolerance rule added and 13
 settled watch items archived. Relaxation fork NOT MET (17th; OVV
 bucket dBrier +0.042 at n=157).
+
+## 2026-10-02 05:4xZ (FULL cycle, operator machine, paper) - core/screen.py crashes on Windows default codec
+
+- **Symptom:** `core/scan.py | core/screen.py prepare` exited 1 at
+  `write_work_dir` -> `(work_dir / f"batch-{nn}.json").write_text(...)`:
+  `UnicodeEncodeError: 'charmap' codec can't encode character '↑'`.
+  The batch payload is dumped with `ensure_ascii=False`, and
+  `Path.write_text` without `encoding=` uses the locale codec, which is
+  cp1252 on the operator's Windows machine. A Pyth gold market's rules
+  text contains an up arrow, so prepare dies before any batch exists.
+- **Cause (protected path):** `core/screen.py` write_text/read_text calls
+  without `encoding="utf-8"` (the same pattern may exist in collect and
+  other core writers). Cloud runners are UTF-8 Linux and never see it.
+- **What I did:** re-ran the pipe with `PYTHONUTF8=1` for this process
+  only (no file edits), and prepare and collect both completed (300/300).
+- **Ask:** pass `encoding="utf-8"` on every core file read/write, or set
+  `PYTHONUTF8=1` in loop.sh for operator-machine runs. Status: PROPOSED.
+
+- **Related sensing note (Pyth-resolved metal touches):** the resolver's
+  history is no longer keyless. `benchmarks.pyth.network/v1/shims/tradingview/*`
+  returns 404 and `hermes.pyth.network/v2/updates/price/*` returns 401.
+  Gold/silver "hit (HIGH/LOW)" weekly rungs can only be read through
+  COMEX futures minus an assumed carry, and that basis uncertainty
+  (about $10-20) is as wide as the edges in question. Status:
+  INFORMATIONAL (no fix asked, recorded so the next cycle doesn't
+  re-probe).
