@@ -7152,6 +7152,16 @@ family forecast-only.
     **tracked observation, 1-for-2, not a rule.** The Sep 21 Opus case:
     discounting the move was right. The Sep 29 Trump-renames-AI chain
     e22fb0445ebe: the market was right. Re-visit at the third instance.
+    **Third instance (RETRO-20261002-1543): Tesla Q3 475-500k
+    e55366022abe.** PM moved 0.60 -> 0.90 between Sep 28 and Oct 2 with no
+    news I could find. I gave it partial weight (0.62 model -> 0.68). It
+    settled in-bracket. The market was right, so the tally is 1-for-3 for
+    discounting. Rule from now on (n=3, review at n=6): when the mid moves
+    >= 0.15 toward one bracket or side in the 72h before a scheduled
+    company or agency report and I cannot name the cause, put at least
+    half the weight on the post-move mid in the recorded estimate. The
+    model-only number goes in the note. Such a row is never a bet
+    against the move.
 - **Funnel row is not optional on a FULL cycle.** Two of the seven FULL
   cycles in the Sep 29 window wrote "Funnel: screened 300, escalated 15"
   into cycles.log but committed no `strategy/funnel.jsonl` row: 41b031e
