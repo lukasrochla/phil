@@ -143,7 +143,9 @@ PY
   fi
   echo "model: $MODEL ($MODEL_WHY)" >&2
 
-  PROMPT="$(cat CYCLE.md)"
+  PROMPT="Run the Phil trading cycle now according to the instructions below. This is an autonomous headless invocation. Do not ask the operator what to do. Execute the appropriate FULL, LIGHT, or TRIGGERED cycle as determined by the instructions and current state.
+
+$(cat CYCLE.md)"
   if [ "$REAL_MODE" -eq 1 ]; then
     if [ "$PEARL_UP" -eq 1 ] \
        && python3 core/real.py doctor 2>/dev/null | grep -q '"ready": true'; then
