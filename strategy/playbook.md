@@ -7314,3 +7314,22 @@ resolved No.
   dBrier +0.334) was the day's worst forecast, and the veto kept the
   No-side trade off the ledger. On the lifetime score.py dedup the OVV
   bucket is n=157, dBrier +0.042, so the veto stays.
+
+## Price-in-range brackets: don't record under the mid on the spot-holding bracket (RETRO-20261003-0450)
+
+- **Rule (n=4, review at n=8).** On a same-day or same-week "close / price
+  between X and Y" bracket that contains current spot, my vol model
+  (Brownian bridge, touch.py, conventional sd) has under-concentrated
+  every time it sat more than 0.05 below the mid: BTC 76-78k ed46e73085f3
+  (0.53 vs 0.94), ETH 2,500-2,600 4a1df602fb13 (0.55 vs 0.70), AAPL close
+  330-335 378a4aee5ddc (0.58 vs 0.75), Musk 800-900B be1ffc61a79d (0.73
+  vs 0.82). All 4 resolved in-bracket, mean dBrier +0.12. In these cases
+  the recorded estimate puts at least 3/4 of its weight on the mid. The
+  model number goes in the note. Such a row is never a No-side bet. This
+  is the same failure family as the DEEP-2026-10-02 econ-ladder finding
+  and Tesla Q3: a conventional sd against a book that sees flow.
+  Above-mid and out-of-bracket rows are not affected.
+- **Record the shade you wrote down.** Primetime 07bfb21eee33: the note
+  said a shaded view would be ~0.72, but the row recorded the unshaded
+  0.82, and the bracket missed (+0.203). If a note names a shaded value
+  as my view, that value is the est_prob.
