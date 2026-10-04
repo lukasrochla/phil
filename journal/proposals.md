@@ -3755,3 +3755,30 @@ bucket dBrier +0.042 at n=157).
   (about $10-20) is as wide as the edges in question. Status:
   INFORMATIONAL (no fix asked, recorded so the next cycle doesn't
   re-probe).
+
+---
+
+## 2026-10-04 — gamma market question text can carry a stale date unrelated to the real endDate
+
+**Evidence:** screened market `2784681`, question text "Will Vancouver
+Whitecaps FC win on 2026-07-16?", screener flagged it at divergence 0.305
+(highest in the 09:24Z batch) reasoning "game scheduled July 16 2026
+(past); stale tense, should be resolved or canceled". Checked gamma
+directly: `closed: false`, `active: true`, `acceptingOrders: true`,
+`endDate: "2026-10-07T00:30:00Z"`. The market is live and will resolve
+against a real upcoming game around Oct 6-7, but its question text still
+names July 16 — a ~3 month stale label on an otherwise-live market. This
+is upstream Polymarket/gamma data, not something `strategy/discovery.py`
+or the screener filters can fix by rule (the text itself is the only
+signal a screener or researcher has for "which game is this").
+**Impact:** every screener pass on a market like this wastes a row on a
+false "stale/resolved" read (confidence low, reason wrong) instead of a
+real probability; if this is systemic across recurring single-team daily
+markets (not spot-checked beyond this one instance), it could be
+costing real divergence signal on a whole market class.
+**Proposed change:** no action asked yet — recording as INFORMATIONAL,
+n=1. If a second instance turns up, add a `strategy/screener-filters.json`
+rule to drop (or a discovery-side check to re-derive the real date from
+`endDate` rather than the question text) markets where the question's
+embedded date and `endDate` disagree by more than a day.
+**Status:** open (informational, n=1)
