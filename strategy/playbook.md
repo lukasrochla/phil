@@ -7389,3 +7389,36 @@ resolved No.
   settles and still gets graded against the market (own estimate did beat
   the book here: -0.131/-0.044 on the two live rows, by shading toward a
   coin flip instead of the book's 0.675/0.515 concentration).
+
+## USGS magnitude-revision edge: fact-final tally and tail-vs-modal split (RETRO-20261005-2051)
+
+- **Fact-final manual tally now n=2, 2W/0L, +$151.23.** `b34575cbd5cc`
+  (USGS Oct 4 daily-max 5.5-5.6 No @0.04, info-race on the ledger) settled
+  WON +$120.00: the resolver honoured the 12:47:49Z revision of the day's
+  max event from M5.5 mb to M5.1 mww (reviewed status, before the market's
+  revision cutoff), confirmed by the final bracket landing on "Under 5.3."
+  Per the DEEP-2026-08-26 rule, a bet on an already-official,
+  only-resolver-deviation-can-lose record is fact-final even when
+  ledger-frozen as info-race; adding it to the `5fbf676cfd7f` prototype
+  (+$31.23) gives fact-final n=2, 2W/0L, +$151.23 — still short of the n≥5
+  bar for a `real.allowed_edge_classes` proposal, but 2-for-2.
+- **Standing revision-risk haircut once one revision has already fired in
+  the same window.** The entry's own 08:01Z forecast (`f4e7c7ac6b71`, est
+  0.97 on the pre-revision value) priced only ~0.03 residual risk despite
+  the Aceh Oct 3 precedent (5.6→5.3 mww revision) already being on the
+  board that same week. A <24-48h-old "reviewed" magnitude, with one
+  same-week revision precedent already observed, should carry a materially
+  higher revision prior than the generic background rate — not just when a
+  specific pending re-review is already visible. Apply this haircut on any
+  future bet or forecast resting on a recent, not-yet-final-status
+  magnitude read.
+- **Tail-vs-modal split, two ladders now agree.** The four non-modal
+  brackets of the same Oct 4 ladder (5.3-5.4, 5.7-5.8, 5.9-6.0, 6.1+, all
+  est <0.06) all settled LOST/correct, matching the first settled ladder's
+  4/4 beat-the-mid result (Sep 30, §DEEP-2026-10-01). The USGS
+  exceedance-rate Poisson model is validated for forecasting daily-max
+  **tail** legs — but edges there have stayed under min_edge both times.
+  All the realized edge in this family comes from the **modal-bracket
+  revision-risk layer** above, not the tail rate model. Keep recording tail
+  forecasts for calibration; don't mistake the tail model's accuracy for
+  bettable tail edge.
