@@ -1,1 +1,0 @@
-/^20[0-9-]+T[0-9:]+Z cycle done/ && substr($1,1,16) > c { i=index($0,"(FULL cycle"); j=index($0,"(LIGHT tick"); if (i && (!j || i<j)) n++ } END{print n+0}
