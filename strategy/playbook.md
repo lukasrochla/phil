@@ -7326,6 +7326,19 @@ resolved No.
   brackets) on such ladders become forecast-only until a sourced-sd
   ladder settles agent-closer. CPI/PPI single-threshold rows (the
   validated mechanical-econ family) are not affected.
+  **Third event, the rule fired (RETRO-20261005-1752).** ISM Services
+  Sep printed 54.9. N(55.1, sd 1.7 convention) gave the landing bracket
+  0.21 vs the book's 0.29, so the raw model lost on the modal pair by
+  +0.106 (the recorded rows lost by +0.024 after the 3/4-on-mid shade).
+  The tail legs beat the thin, one-sided book tails (-0.067, including
+  the winning 57.x No bet 57d5fbff1109), so the recorded ladder netted
+  -0.040. As pre-registered, **tail-leg BETS on consensus-centred econ
+  ladders are now forecast-only.** They reopen when a ladder whose note
+  cites a SOURCED sd (a historical consensus-miss series for that
+  release, with the source) settles agent-closer. Keep recording every leg.
+  The cheapest exit is to source the sd before the next ISM/JOLTS/central-bank
+  ladder. Counter-evidence for the re-grade: in event 3 the book's tails
+  were too fat, not mine.
 - **Say-the-word Yes-side base-rate gate: 1W/0L.** Peterbilt
   'Manufacturing' 50d06b8745c2 won (+$1.10). n=1, no change. The
   lifetime 0W/4L Yes-side record still predates the gate.
