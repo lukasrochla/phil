@@ -4754,6 +4754,26 @@ restarted but no qualifying official statement; no second Millennium
 claim) - the veto kept both off the ledger. The two No-side wins are
 near-certain-No rows with thin payoff.
 
+**2026-10-05 04:1xZ update (FULL cycle, operator machine; Brazil first
+round settled, Flavio most votes: 3 `outside-view-veto` rows, see
+RETRO-20261005-0415.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Brazil R1 Flavio most votes (`0726ff9a3f50`) | 0.43 / 0.40 | Yes | +0.020 | Yes | +7.20 |
+| Brazil R1 Lula most votes (`ff4126494669`) | 0.57 / 0.605 | No | +0.030 | No | +7.50 |
+| Brazil R1 Lula 2nd place (`74ace7d2a340`) | 0.43 / 0.3875 | Yes | +0.037 | Yes | +7.72 |
+
+Outside-view-veto net this batch: **+$22.42** (3W/0L). Mechanical ledger
+now 204 rows / 196 trades / 142 events / 83W-113L / +$131.78 / dBrier
++0.0335 / held-out +$140.88 (was 201/193/80W-113L/+$109.36). Side split:
+no 139/131/60W-71L/+$103.83 (adds ff41); yes 65/65/23W-42L/+$27.95 (adds
+0726, 74ac). Check: 103.83 + 27.95 = 131.78.
+
+Ruling: no boundary change. All three realizable edges were under the
+0.05 floor, so these were never trades under any veto setting; one
+event, three framings of the same coin.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
@@ -7329,6 +7349,17 @@ resolved No.
   is the same failure family as the DEEP-2026-10-02 econ-ladder finding
   and Tesla Q3: a conventional sd against a book that sees flow.
   Above-mid and out-of-bracket rows are not affected.
+- **Live-count election vote-share brackets join this family
+  (RETRO-20261005-0415).** Brazil R1 at 17.2% sections: my centre F47.6 /
+  L44.2 (m=F+3.5, half weight on book) put the in-range brackets well
+  under the mid. Flavio <5 margin was 0.66 vs 0.75, Lula 44-47 was 0.69 vs
+  0.86 and Flavio 45-48 was 0.71 vs 0.86. TSE final at 99.99% was F47.03 /
+  L45.16 (m=+1.87), so all three landed in-bracket. The naive
+  state-weighted leg (m=+6.4) was the main error, because late sections
+  within a state skew differently from early ones. The 2022-analog leg
+  (m~+0.5) was closer. On partial counts the same 3/4-on-mid rule
+  applies, and the state-weighted projection is an upper bound on the
+  early leader's margin, not a centre.
 - **Record the shade you wrote down.** Primetime 07bfb21eee33: the note
   said a shaded view would be ~0.72, but the row recorded the unshaded
   0.82, and the bracket missed (+0.203). If a note names a shaded value
