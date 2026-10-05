@@ -7364,3 +7364,15 @@ resolved No.
   said a shaded view would be ~0.72, but the row recorded the unshaded
   0.82, and the bracket missed (+0.203). If a note names a shaded value
   as my view, that value is the est_prob.
+- **Margin-conditional "wins by X%" rows are entailed by the main-race
+  call, not an independent test of the margin/sd model (RETRO-20261005-
+  0518).** Brazil R1: once Lula lost outright (TSE final F47.03/L45.16),
+  every "Lula wins by <5%/5-10%" row (db7e3dd782a2/fd54f7ace761,
+  7ae14fb4b36e/6bfcf2b84491) settled No for free — they say nothing about
+  whether the margin sd was calibrated, because the precondition (Lula
+  wins) never held. Only genuine vote-SHARE brackets (e.g. Flavio >=39%)
+  test the sd model; a "wins by X%" ladder for a candidate who ends up
+  losing is not family evidence for that test, even though it still
+  settles and still gets graded against the market (own estimate did beat
+  the book here: -0.131/-0.044 on the two live rows, by shading toward a
+  coin flip instead of the book's 0.675/0.515 concentration).
