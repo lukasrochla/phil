@@ -5907,6 +5907,18 @@ near-coin-flip that the book's price happened to call slightly better).
 No rule change; still watching for 5 settled rows per side before any
 loosen/tighten call.
 
+**Update (RETRO-20261006-0348): the previously-open Yes-side row settled,
+first real-bet win-vs-market on this family.** `ee01019fcd12` (NE rally
+"Tax" 25+, Yes @0.45, est 0.50, 5-transcript base rate, explicit
+length-hedge against the Hell-10+ No bet) settled WON — dBrier +0.0525,
+the first positive (we-beat-market) dBrier on a real bet in this family.
+Tally now Yes-side 2W/4L (−$20.00+$6.11 = −$13.89) vs No-side unchanged
+3W/1L (−$0.95). Side-split pnl: −$14.84 across 9 settled rows. Yes-side is
+now n=6 (past the 5-row watch mark on its own), but No-side is still n=4 —
+the stated bar is 5 settled rows per side, so still no loosen/tighten call.
+One win doesn't change the diagnosis: same correctly-sourced-base-rate-on-
+a-near-coin-flip shape as the rest of the family.
+
 **Third settlement, first No-side loss (RETRO-20260925-0748).** The
 state-dinner "Ballroom" row (`f0790f007a85`, own 0.15 vs mid 0.315,
 blocked at edge 0.14) resolved Yes. The veto saved $5.00, which is the
