@@ -7532,3 +7532,20 @@ resolved No.
   revision-risk layer** above, not the tail rate model. Keep recording tail
   forecasts for calibration; don't mistake the tail model's accuracy for
   bettable tail edge.
+
+## Mech note: market-aware single-poll outlier vs an in-hand poll table (RETRO-20261006-0532, n=1)
+
+- Quebec PQ-most-seats forecast `adaf7261b838`: pre-mech own 0.90 (5-poll
+  table, PQ leading ~4pt) shaded down to 0.88 after
+  `superforcaster-market-aware-olas-predict-r1-14b` returned 0.85 on the
+  strength of one Mainstreet poll showing CAQ ahead among decided voters.
+  The sibling `superforcaster_full_search_olas_predict_r1_14b` call (0.15,
+  read 2022 seat counts as current) was correctly thrown out as a
+  research error — that filtering worked. The market-aware call wasn't a
+  research error, just a single current poll outweighed against a wider
+  table already in hand; shading toward it anyway cost calibration
+  (settled Yes, own 0.88 dBrier -0.0034 vs market, superseded the next day
+  by 0.965 once an 87-poll aggregator confirmed the original table).
+  n=1: when market-aware's cited evidence is one poll and I already have
+  a multi-poll table, pool the new poll into the table rather than
+  shading toward the mech's number as if it were independent confirmation.
