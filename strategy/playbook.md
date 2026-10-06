@@ -4862,6 +4862,29 @@ Ruling: no boundary change. Same unvalidated-method shape as the rest
 of the Brazil runoff/margin-to-win family — the market's higher
 Yes-confidence was right, the veto correctly avoided the loss.
 
+**2026-10-06 15:4xZ update (LIGHT tick, operator machine; 4 `outside-
+view-veto` rows settled: Bab el-Mandeb weekly-sum family x2, Brazil Lula
+vote-share family x2, see RETRO-20261006-1542.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Bab el-Mandeb 170-189 ships (`a9ce76ffcfde`) | 0.50 / 0.41 | Yes | +0.090 | No | -5.00 |
+| Bab el-Mandeb 190-209 ships (`deb7fb70d2ae`) | 0.32 / 0.29 | No | -0.030 | Yes | -5.00 |
+| Lula 44-47% vote share (`befd6ac7a561`) | 0.57 / 0.62 | No | +0.040 | Yes | -5.00 |
+| Lula <44% vote share (`859aef5f6184`) | 0.28 / 0.13 | Yes | +0.150 | No | -5.00 |
+
+Outside-view-veto net this batch: **-$20.00** (0W/4L). Mechanical ledger
+now 224 rows / 216 trades / 154 events / 88W-128L / +$107.74 / dBrier
++0.0352 / held-out +$115.74 (was 220/212/150/88W-124L/+$127.74/+0.0347/
++$135.73). Side split: no 149/141/63W-78L/+$91.03 (adds `deb7fb70d2ae`,
+`befd6ac7a561`); yes 75/75/25W-50L/+$16.71 (adds `a9ce76ffcfde`,
+`859aef5f6184`). Check: 91.03 + 16.71 = 107.74.
+
+Ruling: no boundary change. A clean 0-for-4 batch across two unrelated
+unvalidated-model families (the PortWatch weekly-sum bracket model, and
+the Brazil vote-share SD model) — both already-documented weaknesses,
+reinforced not newly discovered. The veto did its job on every row.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
