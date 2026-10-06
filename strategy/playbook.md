@@ -7607,3 +7607,34 @@ resolved No.
   block.** `4ff818e8a26d` Trump "SI"/"Super Intelligence" 5+, est 0.38 vs
   mid 0.25, one post-"rename" transcript, settled No (dBrier +0.082). A
   new pet phrase seen in a single transcript does not establish a rate.
+
+## Hormuz zero-transit Sep-30 leg settled: drop the regime-mix layer once the unpublished tail is short (RETRO-20261006-1735)
+
+- Market 3903043 ("0 ships transit Hormuz on any date by Sep 30",
+  outcome Yes) settled No. Four forecast rows across two supersede
+  chains tracked it as the unpublished-days window (PortWatch
+  publishes ~1 week behind) narrowed: `58d7f8292527` (0.22, 17
+  unpublished days, regime-mix of 10% reopening / 5% full-stop layered
+  on the base Poisson/NB touch rate) and `728e394188f7` (0.20, same
+  shape) both lost to the market mid (brier delta +0.029 / +0.022).
+  `b5bb02b3eb9f` (0.33, 10 unpublished days, higher per-day hazard off
+  a newly-lower published regime) also lost, barely (+0.003).
+  `7dea73b3a136` (0.10, only 3 unpublished days left, hazard read
+  straight off the latest published regime with **no regime-mix
+  layer**) is the only version that beat the market (-0.008).
+- Lesson: for min-touch/count-window forecasts of this shape, the
+  regime-mix layer (blending in reopening/full-stop scenarios on top
+  of the observed rate) added tail risk the published series never
+  supported, every time it was tried in this episode — and dropping it
+  once the unpublished tail got short (here, <= 5 days) is what finally
+  beat the market. Going forward: when the unpublished tail on a
+  count-window min-touch forecast is <= 5 days, price off the
+  most-recently-published regime's rate directly and drop the
+  regime-mix layer; keep the regime-mix layer only while the
+  unpublished tail is long enough that no single regime read can carry
+  it alone. This family is still `unvalidated-method` (no
+  resolution-match check done on the min-touch shape, only on the
+  chokepoint 7-day MA brackets) — this is a forecasting-accuracy
+  lesson, not a reclassification.
+- Sibling leg `d910eebe71cd` (by Oct 31, market 4187908) is still open;
+  the pre-registered joint-pair verdict waits for that settlement.
