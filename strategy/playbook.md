@@ -5894,6 +5894,19 @@ per-side rule change: the Yes losses have a diagnosed cause (thematic
 guesses pre-gate, speaker-only counting bug post-gate), and n is too
 small to call either side an edge.
 
+**Update (RETRO-20261006-0258): the predicted "one loss erases three" case
+landed for real.** `924bd90661d0` (NE rally "Hell" 10+, No @0.36, est 0.44,
+properly sourced 5-transcript base rate) settled LOST — Trump said "Hell"
+10+ times. Tally now Yes 1W/4L (−$20.00, the +1 is the earlier Xi-arrival
+win) vs No 3W/1L (+$4.05−$5.00 = −$0.95, a different occasion/venue than
+the three wins). Side-split pnl: −$20.95 across 8 settled rows (one row,
+`ee01019fcd12` Tax 25+, still open). Still n=4 per side — too small to call
+either side an edge, and this loss has the same cause as every other row
+in the family (a correctly-sourced base rate landing on a genuine
+near-coin-flip that the book's price happened to call slightly better).
+No rule change; still watching for 5 settled rows per side before any
+loosen/tighten call.
+
 **Third settlement, first No-side loss (RETRO-20260925-0748).** The
 state-dinner "Ballroom" row (`f0790f007a85`, own 0.15 vs mid 0.315,
 blocked at edge 0.14) resolved Yes. The veto saved $5.00, which is the
