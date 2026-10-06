@@ -4885,6 +4885,24 @@ unvalidated-model families (the PortWatch weekly-sum bracket model, and
 the Brazil vote-share SD model) — both already-documented weaknesses,
 reinforced not newly discovered. The veto did its job on every row.
 
+**2026-10-06 21:0xZ update (FULL cycle, operator machine; NVDA Oct 6
+close >$245 settled: 1 `wide-spread-veto` row, see RETRO-20261006-2103.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| NVDA close >$245 Oct 6 (`67820dd27a0d`) | 0.15 / 0.068 | Yes | +0.040 | No | -5.00 |
+
+Wide-spread-veto net this batch: **-$5.00** (0W/1L). Ledger now 44
+rows / 37 trades / 21W-16L / -$45.49 / dBrier -0.0076 / held-out
+-$44.67 (was 43/36/21W-15L/-$40.49/-0.0082/-$39.67). Side split: no
+27/23/12W-11L/-$35.84 (unchanged); yes 17/14/9W-5L/-$9.66 (adds
+`67820dd27a0d`). Check: -35.84 + -9.66 = -45.50 (rounds to -$45.49).
+
+Ruling: no boundary change. The veto avoided a $5 loss on a
+realized-vol strike leg whose estimate sat above a market that priced
+the upside tail at half the model's; see the RETRO's
+market-microstructure note (forecast brier_delta +0.0637, n=12).
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
