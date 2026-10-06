@@ -1,0 +1,6 @@
+scan: discovery.py supplied 4 queries
+scan: query 'liquid-multiday' -> 49 candidates
+scan: query 'by-liquidity' -> 547 candidates
+scan: query 'active-today' -> 325 candidates
+scan: query 'econ-tag' -> 34 candidates
+scan: 955 candidates total within 336.0h
