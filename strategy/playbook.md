@@ -7549,3 +7549,21 @@ resolved No.
   n=1: when market-aware's cited evidence is one poll and I already have
   a multi-poll table, pool the new poll into the table rather than
   shading toward the mech's number as if it were independent confirmation.
+
+## USGS weekly-count ladder, first settled event (RETRO-20261006-1140)
+
+- **Weekly M5.5+ count model sits on the mid, no bettable edge yet.** Sep
+  28-Oct 4 ladder: 29 forecast rows across 8 passes, mean dBrier -0.0013;
+  tails (8 to 13+) all within ±0.005. The only meaningful error was
+  leaning 0.02-0.05 onto the modal-adjacent "7" over the mid in the Oct 4
+  passes (+0.081 combined); ≤6 won. The one leg that cleared min_edge,
+  `9a2944acc280` (7 @0.12, own 0.16), lost -$5. That is normal variance
+  for a 0.16 shot, but it is also the validated-feed sweep's entire
+  non-Parcl output so far: 1 leg, -$5. One event, no rule. Keep recording
+  the weekly ladder. Do not treat model-vs-mid gaps of 0.04 on a
+  modal-adjacent count bucket as edge until a second settled week shows
+  the model beating the mid there.
+- **Say-the-word Yes gate, fresh checkpoint (DEEP-2026-09-17): +1 correct
+  block.** `4ff818e8a26d` Trump "SI"/"Super Intelligence" 5+, est 0.38 vs
+  mid 0.25, one post-"rename" transcript, settled No (dBrier +0.082). A
+  new pet phrase seen in a single transcript does not establish a rate.
