@@ -4774,6 +4774,77 @@ Ruling: no boundary change. All three realizable edges were under the
 0.05 floor, so these were never trades under any veto setting; one
 event, three framings of the same coin.
 
+**2026-10-06 00:2xZ catch-up update (LIGHT tick, operator machine;
+backlog reconciliation, see RETRO-20261006-0028).** Settling
+`5810b4aba221` (Bia Kicis, DF Senate 2nd place) this tick exposed that
+six retro commits between 2026-10-01 and 2026-10-05 (`2b46573`,
+`2b0c0ea`, `8792e57`, `a7b821a`, `ce09b2c`, `1b17550` — all Brazil
+first-round-family and sibling-Senate settlements) graded
+outside-view-veto/wide-spread-veto rows narratively but never
+extended this table, per the mechanical rule above. 15 OVV rows + 5 WSV
+rows were owed; all 20 are added here in one catch-up, verified against
+`core/counterfactual.py ledger` totals (arithmetic checks below each
+table).
+
+OVV backlog (all `politics-general`/`politics-primary`, all Brazil R1
+family except row 4):
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Lula 5-10% margin, 1st read (`7ae14fb4b36e`) | 0.35 / 0.12 | Yes | +0.220 | No | -5.00 |
+| Flavio >=39% vote share (`4e52c227a60f`) | 0.45 / 0.85 | No | +0.390 | Yes | -5.00 |
+| Flavio 2nd place, 1st read (`22d7ab1cf2f3`) | 0.85 / 0.72 | Yes | +0.120 | No | -5.00 |
+| DF Senate Bia Kicis 2nd place (`5810b4aba221`) | 0.65 / 0.8245 | No | +0.170 | Yes | -5.00 |
+| Flavio <5% margin, 1st read (`12354db16b7d`) | 0.23 / 0.196 | Yes | +0.026 | Yes | +19.51 |
+| Lula 5-10% margin, re-forecast (`6bfcf2b84491`) | 0.15 / 0.10 | Yes | +0.040 | No | -5.00 |
+| Lula <5% margin (`db7e3dd782a2`) | 0.57 / 0.675 | No | +0.090 | No | +9.71 |
+| Flavio <5% margin, re-forecast (`39fa62ed8636`) | 0.36 / 0.3505 | Yes | +0.009 | Yes | +9.25 |
+| Lula <5% margin, re-forecast (`fd54f7ace761`) | 0.47 / 0.515 | No | +0.030 | No | +5.00 |
+| Flavio 2nd place, re-forecast (`0f48d1d1d095`) | 0.57 / 0.61 | No | +0.030 | No | +7.50 |
+| Tocantins Flavio most votes (`754740e7b6ee`) | 0.60 / 0.715 | No | +0.040 | Yes | -5.00 |
+| Cury 2-4% vote share (`037c8115d71e`) | 0.455 / 0.605 | No | +0.055 | Yes | -5.00 |
+| Flavio 39-42% vote share (`46a061647e09`) | 0.22 / 0.085 | Yes | +0.120 | No | -5.00 |
+| Flavio 5-10% margin (`69893290881a`) | 0.20 / 0.125 | Yes | +0.071 | No | -5.00 |
+| Flavio 48-51% vote share (`5ac096bfce5e`) | 0.25 / 0.121 | Yes | +0.097 | No | -5.00 |
+
+Outside-view-veto net this batch: **+$0.97** (5W/10L). Mechanical
+ledger now 219 rows / 211 trades / 149 events / 88W-123L / +$132.74 /
+dBrier +0.0346 / held-out +$140.73 (was 204/196/142/83W-113L/+$131.78/
++0.0335/+$140.88). Side split: no 146/138/63W-75L/+$106.03 (adds
+db7e3dd782a2, fd54f7ace761, 0f48d1d1d095, 754740e7b6ee, 037c8115d71e,
+5810b4aba221, 4e52c227a60f); yes 73/73/25W-48L/+$26.71 (adds
+7ae14fb4b36e, 22d7ab1cf2f3, 12354db16b7d, 6bfcf2b84491, 39fa62ed8636,
+46a061647e09, 69893290881a, 5ac096bfce5e). Check: 106.03 + 26.71 =
+132.74.
+
+WSV backlog:
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| MrBeast Gaming day-4 views 26.75-27.5M (`ba4ad02817d3`) | 0.85 / 0.875 | No | -0.030 | Yes | -5.00 |
+| ISM Manufacturing PMI 55.0-55.9% Sep (`4b0493d215d6`) | 0.283 / 0.395 | No | +0.077 | No | +2.81 |
+| Trump Iran sanctions EO by Sep30 (`e9bfda300d68`) | 0.04 / 0.215 | No | +0.040 | No | +0.43 |
+| Gas <$3.75 any state by Sep30 (`0bee87f8d628`) | 0.03 / 0.24 | No | +0.030 | No | +0.32 |
+| BA Senate Rui Costa most votes (`dc927200fb0f`) | 0.75 / 0.82 | No | -0.040 | Yes | -5.00 |
+
+Wide-spread-veto net this batch: **-$6.43** (3W/2L). Ledger now 43
+rows / 36 trades / 21W-15L / -$40.49 / dBrier -0.0082 / held-out
+-$39.67 (was 38/31/18W-13L/-$34.06/-0.0056/-$33.26). Side split: no
+27/23/12W-11L/-$35.84 (adds all 5 rows above); yes 16/13/9W-4L/-$4.66
+(unchanged). Check: -35.84 + -4.66 = -40.50 (rounds to -$40.49).
+
+Ruling: no boundary change on either veto. Ten of the fifteen OVV rows
+are the same Brazil first-round event sliced into margin/vote-share
+brackets — net near-zero (+$0.97) and mixed-sign, consistent with the
+"many framings of one coin" read already on record for the siblings
+graded same-commit. The two negative-edge WSV rows (`ba4ad02817d3`,
+`dc927200fb0f`) confirm the no-bet call was right even before
+considering the spread: the model's own estimate didn't clear the
+market price on the only side a wide book could have filled, so the
+veto cost nothing beyond the already-accepted `-$5` counterfactual
+convention. The process lesson is the enforcement addendum above, not
+a trading-rule change.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
@@ -5185,6 +5256,20 @@ outside-view-veto or wide-spread-veto row must extend this table — row,
 re-summed totals, side split — in the SAME commit as the retro; a veto
 retro without a table edit is a violation on its face, same
 copy-the-arithmetic pattern as the weld and cap rules.**
+
+**Enforcement addendum (2026-10-06, after a 20-row backlog — 15
+outside-view-veto + 5 wide-spread-veto rows settled across six retro
+commits between 2026-10-01 and 2026-10-05 with no table edit, caught
+only when resolve.py settled another outside-view-veto row on a LIGHT
+tick and the running totals no longer matched; see the 2026-10-06
+00:2xZ catch-up block below): before closing ANY retro step that
+settles something, run `python3 core/counterfactual.py ledger
+--skip-reason outside-view-veto` and `--skip-reason wide-spread-veto`
+and compare `n_rows`/`n_trades`/wins/losses/pnl against this table's
+last recorded totals — even when the settled row this tick isn't
+itself OVV/WSV. A mismatch means a prior tick owes a backlog row; fix
+it in this commit, don't defer it, since every deferral compounds the
+reconciliation cost.
 
 **2026-08-24 update (16:22Z): BTC touch-$80k row added, first settled
 touch-anytime-family instance.** Driftless GBM barrier-touch self-model
