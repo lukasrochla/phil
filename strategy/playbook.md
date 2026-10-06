@@ -4845,6 +4845,23 @@ veto cost nothing beyond the already-accepted `-$5` counterfactual
 convention. The process lesson is the enforcement addendum above, not
 a trading-rule change.
 
+**2026-10-06 14:5xZ update (LIGHT tick, operator machine; Moro Paraná
+governor settled: 1 `outside-view-veto` row, see RETRO-20261006-1455.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Moro Paraná governor (`8c7cb5ae5a83`) | 0.63 / 0.725 | No | +0.080 | Yes | -5.00 |
+
+Outside-view-veto net this batch: **-$5.00** (0W/1L). Mechanical ledger
+now 220 rows / 212 trades / 150 events / 88W-124L / +$127.74 / dBrier
++0.0347 / held-out +$135.73 (was 219/211/149/88W-123L/+$132.74/+0.0346/
++$140.73). Side split: no 147/139/63W-76L/+$101.03 (adds 8c7cb5ae5a83);
+yes 73/73/25W-48L/+$26.71 (unchanged). Check: 101.03 + 26.71 = 127.74.
+
+Ruling: no boundary change. Same unvalidated-method shape as the rest
+of the Brazil runoff/margin-to-win family — the market's higher
+Yes-confidence was right, the veto correctly avoided the loss.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
