@@ -7681,3 +7681,30 @@ resolved No.
   lesson, not a reclassification.
 - Sibling leg `d910eebe71cd` (by Oct 31, market 4187908) is still open;
   the pre-registered joint-pair verdict waits for that settlement.
+
+## Clarivate Citation Laureate overpricing in Nobel Chemistry markets, first full field test (RETRO-20261007-1240)
+
+- 2026 Nobel Chemistry (announced Oct 7 09:45Z): five researched "No"
+  positions all settled correctly — `9d92542a1998` Gray and `ef3a6b85f969`
+  Allara (bets, both won, +$1.49 combined), plus forecast-only Liu,
+  Schultz, Balasubramanian. Three of the five (Gray, Allara, Liu) were
+  2026 Clarivate Citation Laureates, a real but weak precursor signal: the
+  market priced each at 0.13-0.14 Yes, but the outside-view base rate for
+  a same-year Clarivate pick actually winning is only ~2-5% per cited
+  group (~1-3 hits in ~22 years across ~3-6 groups/year) — not the
+  ~15-20% implied by the market price. The fifth name (Balasubramanian)
+  had a different precursor (2026 Princess of Asturias + Bate Hardy for
+  NGS/Solexa) and was priced lower than the market's 0.17-0.20 but still
+  above zero, correctly.
+- **Field-sum check**: at entry, summing Yes-bid prices across all ~30
+  named candidates on the board gave ~1.44 against ~1 expected actual
+  laureate — a cheap mechanical overpricing flag (longshot favorite bias
+  spread across a wide field) that corroborated the narrative read. Worth
+  running on any other award-season field with many named candidates
+  (other Nobel categories, Wolf Prize, Lasker, etc.) before trusting a
+  precursor-list narrative alone.
+- n=1 prize-year, n=2 bets: too small to promote this to a standing rule
+  across all award categories — the next Nobel/credible-precursor field
+  should re-test both the ~2-5%/group base rate and the field-sum check
+  before either becomes a default assumption rather than a confirmed
+  pattern.
