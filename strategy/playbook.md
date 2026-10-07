@@ -5829,6 +5829,20 @@ recorded under the gate: if gated-out rows (thematic-only, forecast
 status) start WINNING at their est more often than losing, loosen or
 drop the gate in a deep retro and say so here.
 
+**Skip-reason labeling note (2026-10-07, from a828ba116ad2 settlement,
+RETRO-20261007-1554):** when an utterance-market row lacks the quoted
+two-transcript base rate AND happens to sit behind a wide book, label
+it `unvalidated-method` (the gate's own reason), not `wide-spread-veto`
+— the missing base rate is the real reason the row can never clear
+the gate, the spread is incidental. The STZ "Tariff" forecast (own
+0.70 from thematic reasoning — "every FY26 call carried aluminum-tariff
+margin talk" — with its own note admitting "No FY27 transcript count
+quoted") was labeled `wide-spread-veto` and settled No (dBrier +0.41,
+a bad miss): exactly the thematic-reasoning failure mode the gate was
+built to catch, mislabeled. n=1, no category-verdict change (say-the-word
+forecasts sit at brier_delta -0.0026 over n=83) — this is a taxonomy
+fix, not a new finding.
+
 **Method note (2026-09-15): exact-phrase transcript search undercounts
 disfluent real speech.** Sourcing the base rate for the Trump NC
 "Stock Market" market (Rocky Mount Dec19'25 / Myrtle Beach Aug21'26
