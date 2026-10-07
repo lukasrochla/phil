@@ -4885,6 +4885,31 @@ unvalidated-model families (the PortWatch weekly-sum bracket model, and
 the Brazil vote-share SD model) — both already-documented weaknesses,
 reinforced not newly discovered. The veto did its job on every row.
 
+**2026-10-07 01:1xZ update (LIGHT tick, operator machine; Hormuz
+zero-transit by-Oct-31 leg settled, LAST leg of the pre-registered
+Hormuz PAIR — joint verdict in RETRO-20261007-0112, watch item
+archived to watch-archive.jsonl.)**
+
+| Row | est vs mkt (ask) | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Hormuz 0-transit by Oct31 (`d910eebe71cd`) | 0.38 / 0.23 | Yes | +0.150 | Yes | +16.74 |
+
+Outside-view-veto net this batch: **+$16.74** (1W/0L). Mechanical
+ledger now 225 rows / 217 trades / 155 events / 89W-128L / +$124.48 /
+dBrier +0.0340 / held-out +$132.48 (was 224/216/154/88W-128L/+$107.74/
++0.0352/+$115.74). Side split: no 149/141/63W-78L/+$91.03 (unchanged);
+yes 76/76/26W-50L/+$33.45 (adds `d910eebe71cd`). Check: 91.03 + 33.45 =
+124.48 ✓.
+
+Ruling: no boundary change. The two Hormuz legs resolved in opposite
+directions on the same series — short-horizon (Sep30) lost to the
+market, long-horizon (Oct31) beat it by a wide margin — which reads as
+the market's term structure flattening marginal hazard faster across
+the full window than warranted, not as this leg's self-built dispersion
+being newly validated. Full reasoning in the retro. Countable-metric
+carve-out bar: still not met (6 rows meets the 5-row floor, but held-out
+folds positive 0 of 2, need 3).
+
 **2026-10-06 21:0xZ update (FULL cycle, operator machine; NVDA Oct 6
 close >$245 settled: 1 `wide-spread-veto` row, see RETRO-20261006-2103.)**
 
