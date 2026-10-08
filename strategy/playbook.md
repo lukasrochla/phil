@@ -7571,6 +7571,11 @@ resolved No.
   -0.0331). Now below n=10, within n=43, above n=18. When shading a touch
   estimate toward the mid, put the unshaded touch.py value in the note so
   shaded-vs-raw can be graded.
+  Tally update RETRO-20261008-1325: +1 above-mid row (BTC dip 82K Oct 5-11
+  b508d6c9f0a2, own 0.71 unshaded vs mid 0.59, touched, -0.084, own
+  closer). Its twin c8853475ea55 (same side, same gap) lost, so the
+  above-side BTC-dip pair is 1-1. Rows between 10-01 and 10-08 are not
+  folded in here; the next deep retro re-counts from forecasts.jsonl.
 - **Validated-feed sweep, 10-06 retirement test already decided.** The
   test was "retire if no leg outside the Parcl set shows ask-edge >=
   min_edge". USGS '7' bucket 9a2944acc280 (Yes @0.12, own 0.16, edge
