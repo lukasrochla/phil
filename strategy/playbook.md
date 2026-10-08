@@ -4963,6 +4963,28 @@ settlement forced a reconcile check. Worth the operator's attention if
 it keeps recurring — the mechanical rule has no automatic enforcement
 beyond a retro remembering to run it.
 
+**2026-10-08 04:2xZ update (FULL cycle, operator machine; 1
+`wide-spread-veto` row settled; see RETRO-20261008-0420.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Texas rally "Job" 20+ (`8aaa3f27a5ce`, settled 2026-10-08T03:24Z) | 0.32 / 0.505 | No | +0.130 | No | +4.09 |
+
+Wide-spread-veto net this batch: **+$4.09** (1W/0L). Ledger now 49 rows /
+42 trades / 23W-19L / -$50.76 / brier_delta +0.0042 / held-out -$50.50
+(was 48/41/22W-19L/-$54.85/+0.0075/-$54.59). Side split: no
+31/27/14W-13L/-$36.11 (adds Job); yes 18/15/9W-6L/-$14.66 (unchanged).
+Check: -36.11 + -14.66 = -50.77 (rounds to -$50.76).
+
+Ruling: no boundary change at n=49. The sibling-threshold base rate
+(1/3 prior Job legs at 15+/20+ hit) beat the 0.505 mid; together with
+Data Center this is the second Texas-rally say-the-word veto this event
+where a sibling-settled base rate beat a wide-book mid, but Vegan 3+ went
+the other way at the same event. Say-the-word wide-spread-veto rows sit
+at 11 rows / 8W-3L / +$8.42 / dBrier -0.0511 cumulatively (incl. Job;
+held-out -$2.32) — a candidate carve-out, but
+still below the ~15-settlement floor; revisit when n>=15.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
