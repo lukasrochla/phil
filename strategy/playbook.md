@@ -4928,6 +4928,41 @@ realized-vol strike leg whose estimate sat above a market that priced
 the upside tail at half the model's; see the RETRO's
 market-microstructure note (forecast brier_delta +0.0637, n=12).
 
+**2026-10-08 03:2xZ update (LIGHT tick, operator machine; 4
+`wide-spread-veto` rows settled since the last entry above — three are a
+backlog this entry repairs (RETRO-20261007-1554, RETRO-20261007-2045,
+RETRO-20261008-0145 each settled a wide-spread-veto row and never
+extended this table), plus this tick's own settlement; see
+RETRO-20261008-0328.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| STZ earnings call "Tariff" (`a828ba116ad2`, settled 2026-10-07T15:37Z, graded RETRO-20261007-1554) | 0.70 / 0.28 | Yes | +0.170 | No | -5.00 |
+| Haiku 4.6+ by Oct 7 (`208eb0587361`, settled 2026-10-07T20:11Z, graded RETRO-20261007-2045) | 0.30 / 0.6615 | No | +0.115 | Yes | -5.00 |
+| Texas rally "Vegan" 3+ (`9fcbbcc4385f`, settled 2026-10-08T01:19Z, graded RETRO-20261008-0145) | 0.70 / 0.825 | No | +0.050 | Yes | -5.00 |
+| Texas rally "Data Center" (`64e4e746ebb6`, settled this tick) | 0.45 / 0.595 | No | +0.080 | No | +5.64 |
+
+Wide-spread-veto net this batch: **-$9.36** (1W/3L, spanning four
+settlement dates). Ledger now 48 rows / 41 trades / 22W-19L / -$54.85 /
+brier_delta +0.0075 / held-out -$54.59 (was 44/37/21W-16L/-$45.49/
+-0.0076/-$44.67). Side split: no 30/26/13W-13L/-$40.20 (adds Haiku,
+Vegan, Data Center); yes 18/15/9W-6L/-$14.66 (adds Tariff). Check:
+-40.20 + -14.66 = -54.86 (rounds to -$54.85).
+
+Ruling: no boundary change at n=48, still thin relative to
+outside-view-veto's n=175+. Three of the four legs (Tariff, Haiku,
+Vegan) share a shape: an empty/wide book's mid was dismissed as an
+"artifact," but the mid turned out closer to the truth than the model's
+own estimate in all three. Data Center is the counterexample in the
+same batch (own 0.45 beat an inflated mid of 0.595) — no consistent
+direction, read as noise at this n, not a reason to trust wide-book mids
+more. Process note for the operator, not a strategy change: three
+retros in a row skipped this table-extension duty despite the DEEP-2026-08-23
+rule being explicit; the gap was only caught because this tick's own
+settlement forced a reconcile check. Worth the operator's attention if
+it keeps recurring — the mechanical rule has no automatic enforcement
+beyond a retro remembering to run it.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
