@@ -4985,6 +4985,42 @@ at 11 rows / 8W-3L / +$8.42 / dBrier -0.0511 cumulatively (incl. Job;
 held-out -$2.32) — a candidate carve-out, but
 still below the ~15-settlement floor; revisit when n>=15.
 
+**2026-10-08 05:1xZ update (LIGHT tick, operator machine; Van Hattem RS
+Senate most-votes forecast settled, 1 `outside-view-veto` row, see
+RETRO-20261008-0511.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Van Hattem RS Senate most votes (`8260d1402c2e`) | 0.50 / 0.74 | No | +0.210 | No | +12.24 |
+
+Outside-view-veto net this batch: **+$12.24** (1W/0L). Mechanical ledger
+now 226 rows / 218 trades / 156 events / 90W-128L / +$136.72 / dBrier
++0.0325 / held-out +$144.16 (was 225/217/155/89W-128L/+$124.48/+0.0340/
++$132.48), verified against `python3 core/counterfactual.py ledger
+--skip-reason outside-view-veto` (overall: n_rows=226, n_trades=218,
+wins=90, losses=128, pnl=136.72, brier_delta=0.0325, held_out_pnl=144.16
+-- exact match). Side split: no 150/142/64W-78L/+$103.27 (adds
+`8260d1402c2e`); yes 76/76/26W-50L/+$33.45 (unchanged). Check: 103.27 +
+33.45 = 136.72 (checks).
+
+Ruling: no boundary change at n=226. The veto correctly declined a bet:
+the market priced VH to win most votes at 0.74, the self-built four-way
+polling-margin Gaussian (own 0.50, genuinely a coin flip on a ~0-2pt
+margin, sd 5) was less confident than the market, and the market is the
+one that turned out wrong (VH did not win most votes) -- this is the
+rarer shape where the veto's own estimate beats a confident market
+rather than merely avoiding a loss on an overconfident self-model.
+Process note (not a ruling, not acted on this tick): `counterfactual.py
+reconcile` flags 24 older settled OVV rows (Sep17-Oct4) as never
+individually tabulated in this section by row ID, but the running
+totals above already match the tool's aggregate to the penny once only
+today's row is added on top of the last hand total -- meaning those 24
+rows' dollars are already inside the aggregate (it has always been
+copied from the tool directly) and only their illustrative per-row lines
+are missing. Logged to `journal/proposals.md` as a backfill task rather
+than rushed here, since inserting 24 rows into the right dated spots
+without double-counting needs more care than a LIGHT tick affords.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
@@ -7721,6 +7757,11 @@ resolved No.
   block.** `4ff818e8a26d` Trump "SI"/"Super Intelligence" 5+, est 0.38 vs
   mid 0.25, one post-"rename" transcript, settled No (dBrier +0.082). A
   new pet phrase seen in a single transcript does not establish a rate.
+- **Same checkpoint, +1 costly block (2026-10-08, RETRO-20261008-0511).**
+  `064f3152fe73` Trump "Fascism" Texas rally, est 0.42 vs ask 0.38 (single
+  Sep18 Paxton-vlog transcript hit, failed the 2-transcript gate), settled
+  Yes. Tally now 1-for-2 (1 correct block, 1 costly), still far below the
+  5-row review trigger.
 
 ## Hormuz zero-transit Sep-30 leg settled: drop the regime-mix layer once the unpublished tail is short (RETRO-20261006-1735)
 

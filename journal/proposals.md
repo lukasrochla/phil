@@ -3782,3 +3782,40 @@ rule to drop (or a discovery-side check to re-derive the real date from
 `endDate` rather than the question text) markets where the question's
 embedded date and `endDate` disagree by more than a day.
 **Status:** open (informational, n=1)
+
+---
+
+## 2026-10-08 — backfill 24 untabulated outside-view-veto rows in the playbook counterfactual table
+
+**Evidence:** `python3 core/counterfactual.py reconcile` lists 24 settled
+`outside-view-veto` ledger rows (Sep 17 - Oct 4, ids: ce1f37ed95c0,
+9f05a589aba3, 3e4351bdb5c6, f41e0b09f084, 56ed434261a5, 275271e3d70b,
+71aef6acf4eb, b350adc7e95c, fdedb184ad3e, 3ed526b57eca, cec5bff18abf,
+07bfb21eee33, bb60348ab311, c0ad4f0ec92d, a3ef8fda3cc9, 7f5d8917f569,
+e22fb0445ebe, 746c6c349ea0, 16af5b16fa0c, 76946f6b4f07, 25fc1343e0cd,
+e55366022abe, 94aba235a75e) that never got an individual row in
+`strategy/playbook.md`'s outside-view-veto counterfactual table, despite
+the DEEP-2026-08-23 rule requiring one per settled veto row. But checked
+against the running totals: the table's last hand-recorded total before
+today (225 rows/217 trades/89W-128L/+$124.48, dated the 2026-10-07
+01:1xZ entry) plus only today's one new settlement (Van Hattem,
+8260d1402c2e, +$12.24, 1W) reproduces the live tool's current aggregate
+EXACTLY (226/218/90W-128L/+$136.72/dBrier +0.0325/held-out +$144.16, all
+digits matching). That means the 24 rows' dollar contributions are
+already inside the running total — the hand total has apparently always
+been copied from this tool directly rather than re-derived from the
+visible per-row table — and what's missing is only the illustrative
+per-row line for each, not any money. Backfilling them is a bookkeeping
+completeness task, not a correction, but doing it blind risks someone
+later re-summing the visible rows and double-counting against the
+already-correct running total.
+**Proposed change:** either (a) a future FULL cycle or deep retro adds
+the 24 rows' individual lines (est vs mkt/side/edge/result/CF P&L, all
+in the JSON dump from `core/counterfactual.py ledger --skip-reason
+outside-view-veto --rows --json`) to the table as a clearly-marked
+backfill batch that changes zero totals, or (b) `counterfactual.py
+reconcile` gets a mode that only reports pure backfill gaps (total
+matches, rows missing) separately from true numeric drift (total
+doesn't match), so future catch-up passes don't have to re-derive which
+case they're in by hand the way this cycle did.
+**Status:** open
