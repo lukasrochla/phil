@@ -7580,6 +7580,10 @@ resolved No.
   Week of Oct 5 bf44e41a7a2d, own 0.93 shaded vs mid 0.895, gap +0.035,
   touched, -0.0061, own closer). Now below n=10, within n=44, above
   n=18.
+  Tally update RETRO-20261008-1816: +1 within-0.05 row (RKLB LOW $68
+  Week of Oct 5 a7f473ce417e, own 0.76 unshaded touch.py 0.767 vs mid
+  0.715, gap +0.045, touched, -0.0236, own closer). Now below n=10,
+  within n=45, above n=18.
 - **Validated-feed sweep, 10-06 retirement test already decided.** The
   test was "retire if no leg outside the Parcl set shows ask-edge >=
   min_edge". USGS '7' bucket 9a2944acc280 (Yes @0.12, own 0.16, edge
