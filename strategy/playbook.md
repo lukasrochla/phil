@@ -1621,6 +1621,15 @@ Prefer, in order:
      outcome-uninformative — with no directional signal there is no
      foregone-edge claim either way on a coin-flip-priced market.
      Market-confirms tally unchanged at n≈6, zero foregone edge.
+   - **Category verdict at n=15 (DEEP-2026-10-09, RETRO-20261009-1335):**
+     `earnings` forecasts/bets cross the ~15-settlement mind-small-n bar
+     for the first time (score.py: n=15, brier_delta +0.0239 — modestly
+     beats market). Latest settlement, DAL (`5144376`, forecast
+     `12b8a50684d0`): own 0.30 vs mid 0.25, actual No, correctly skipped
+     no-edge (edge 0.03 < 0.04 floor) — the min_edge floor did its job,
+     not a model miss worth chasing. No rule change: this confirms the
+     existing #1 priority ranking for this category rather than revising
+     it. Keep tracking; re-check the verdict every ~15 more settlements.
 2. **Soccer daily match markets** — resolve at final whistle. Research: recent
    form, injuries/rotation news, home/away splits, league table stakes,
    odds at conventional bookmakers (the sharpest available benchmark — if
